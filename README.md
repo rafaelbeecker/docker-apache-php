@@ -1,6 +1,6 @@
-# Skeleton: Docker + Apache + PHP8.0
+# Skeleton: Docker + Apache + PHP7.1
 
-Estrutura base para aplicações web com Apache v2.4 e PHP v8.0
+Estrutura base para aplicações web com Apache v2.4 e PHP v7.1
 
 ## Introdução
 
@@ -36,4 +36,4 @@ O funcionamento do ambiente pode ser valido a partir do acesso ao seu ambiente l
 
 * [Docker](https://docs.docker.com/get-docker/) 
 * [Apache](https://httpd.apache.org/docs/2.4/)
-* [PHP8.0](https://www.php.net/docs.php)
+* [PHP](https://www.php.net/docs.php)

@@ -1,4 +1,4 @@
-FROM php:8.0-apache
+FROM php:7.1-apache
 
 RUN apt-get update && apt-get install -y curl \
     git \
@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y curl \
     libpng-dev \
     libpq-dev
 
-RUN pecl install xdebug-3.0.0
+RUN pecl install xdebug-2.9.6
 RUN docker-php-ext-install gd \
     pdo \
     pdo_pgsql \
