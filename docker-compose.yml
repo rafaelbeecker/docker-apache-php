@@ -1,0 +1,35 @@
+
+version: "3.9"
+
+services:
+  webserver:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/var/www/html
+      - ./config/sites-enabled:/etc/apache2/sites-enabled
+      - ./config/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-xdebug.ini
+    environment:
+      - DB_HOST=postgres
+      - DB_USER=postgres
+      - DB_PASS=postgres
+      - DB_NAME=storage
+      - DB_DRIVER=pdo_pgsql
+    container_name: webserver
+    extra_hosts:
+      - "dev.docker.com.br:127.0.0.1"
+  database:
+    image: library/postgres:11-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=storage
+      - POSTGERS_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    container_name: database
+
+volumes:
+  pgdata:
