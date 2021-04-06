@@ -10,13 +10,15 @@ services:
       - ./html:/var/www/html
       - ./config/sites-enabled:/etc/apache2/sites-enabled
       - ./config/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-xdebug.ini
+      - ./config/supervisor/apache.conf:/etc/supervisor/conf.d/apache2.conf
     environment:
       - DB_HOST=postgres
       - DB_USER=postgres
       - DB_PASS=postgres
       - DB_NAME=storage
-      - DB_DRIVER=pdo_pgsql
-    container_name: webserver
+      - DB_DRIVER=pdo_pgsql    
+    container_name: webserver    
+    hostname: webserver
     extra_hosts:
       - "dev.docker.com.br:127.0.0.1"
   database:
@@ -30,6 +32,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     container_name: database
+    hostname: database
 
 volumes:
   pgdata:
