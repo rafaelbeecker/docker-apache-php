@@ -13,7 +13,7 @@ A partir das instruções abaixo você terá em seu ambiente local o projeto rod
 * [Docker](https://docs.docker.com/get-docker/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
-### Compilação
+### Build
 
 Execute a seguinte instrução na pasta raiz do projeto para que o ambiente seja compilado e preparado para execução:
 
@@ -32,8 +32,9 @@ O funcionamento do ambiente pode ser valido a partir do acesso ao seu ambiente l
  curl http://localhost
  ```
 
-## Ferramental
+## Tooling
 
 * [Docker](https://docs.docker.com/get-docker/) 
 * [Apache](https://httpd.apache.org/docs/2.4/)
 * [PHP](https://www.php.net/docs.php)
+* [Supervisord](http://supervisord.org/installing.html)
